@@ -1,0 +1,129 @@
+:root {
+    --primary: #ee75bd;
+    --secondary: #a29bfe;
+    --accent: #fd79a8;
+    --dark: #203436;
+    --light: #f5f7fa;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Substitua pelo nome do seu arquivo .jpg */
+    background-image: url('fundorosa.jpg'); 
+    background-size: cover; /* Faz a imagem cobrir a tela toda */
+    background-position: center;
+    background-attachment: fixed; /* A imagem não rola com o scroll */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+.card {
+    width: 600px;
+    background: rgba(255, 255, 255, 0.258);
+    backdrop-filter: blur(10px);
+    border-radius: 60px;
+    box-shadow: 0 40px 60px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.header-img {
+    height: 120px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.content {
+    padding: 25px;
+    text-align: center;
+}
+
+.intro-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quote-box {
+    font-style: italic;
+    color: var(--dark);
+    min-height: 80px; /* Aumentado levemente para evitar saltos de layout */
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+#quoteText {
+    transition: opacity 0.3s ease;
+}
+
+.btn-celebrate {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;    
+    transition: 0.2s;
+    outline: none;
+}
+
+.btn-celebrate:hover {
+    background: #e98dac;
+}
+
+.btn-celebrate:active {
+    transform: scale(1.00);
+}
+
+.video-container {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    line-height: 0;
+}
+
+.video-player {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Faz o vídeo preencher o espaço como uma foto */
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.reveal-text {
+    animation: slideUpFade 0.5s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Começa um pouco abaixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Sobe para o lugar original */
+    }
+}
